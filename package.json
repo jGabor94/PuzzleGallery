@@ -9,16 +9,44 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.525.0",
+    "@aws-sdk/signature-v4": "^3.374.0",
+    "@aws-sdk/types": "^3.523.0",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/lab": "^5.0.0-alpha.166",
+    "@mui/material": "^5.15.11",
+    "@mui/material-nextjs": "^5.15.11",
+    "@plaiceholder/next": "^3.0.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/uuid": "^9.0.8",
+    "aws-crt": "^1.21.1",
+    "bcrypt": "^5.1.1",
+    "browser-image-compression": "^2.0.2",
+    "file-type": "^19.0.0",
+    "form-data-to-object": "^0.2.0",
+    "formik": "^2.4.5",
+    "http-status": "^1.7.4",
+    "joi": "^17.12.2",
+    "mongoose": "^8.2.0",
+    "next": "14.1.1",
+    "next-auth": "^5.0.0-beta.4",
+    "nodemailer": "^6.9.11",
+    "object-to-formdata": "^4.5.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.1"
+    "react-photo-view": "^1.2.4",
+    "swr": "^2.2.5",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.1"
+    "eslint-config-next": "14.1.1",
+    "typescript": "^5"
   }
 }

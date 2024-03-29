@@ -7,7 +7,7 @@ import { Image } from "@/lib/database/models"
 const SA_GetImages = makeServerAction(async ({ params }) => {
 
     const [page] = params
-    const limit = process.env.itemsPerPage
+    const limit = process.env.NEXT_PUBLIC_ITEMS_PER_PAGE
 
     await dbConnect()
 

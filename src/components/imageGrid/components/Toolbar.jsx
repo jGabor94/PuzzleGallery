@@ -42,9 +42,8 @@ export default function Tooldbar({ index, images, onIndexChange }) {
         }
     }
 
-
     return (
-        <Stack direction="row" alignItems="center" gap={1}>
+        <Stack direction="row" alignItems="center" gap={1} sx={{ zIndex: 10000000000 }}>
             {progress && <LinearProgress sx={{ position: "absolute", top: 0, left: 0, width: "100%" }} />}
             {session && aclCheck(imageAcl, "delete", session.user.roles) && (
                 <DeleteOutlineIcon sx={{ opacity: ".75", cursor: "pointer", "&:hover": { opacity: 1 } }} onClick={handleDelete} />

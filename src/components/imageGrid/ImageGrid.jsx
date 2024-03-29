@@ -7,6 +7,8 @@ import { PhotoSlider } from "react-photo-view"
 import Tooldbar from "./components/Toolbar"
 import ImageItem from "./components/ImageItem"
 import Overlay from "./components/Overlay"
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 export default function ImageGrid() {
 
@@ -22,6 +24,7 @@ export default function ImageGrid() {
     }
 
     const handleClose = () => {
+        console.log("close")
         setSliderOpen(false)
     }
 
@@ -35,8 +38,7 @@ export default function ImageGrid() {
 
 
     return visibility && imageList && (
-        <Masonry columns={{ xs: 2, sm: 3 }} spacing={2} sx={{ width: 1000, maxWidth: "100%" }}>
-
+        <Masonry columns={{ xs: 2, sm: 3 }} spacing={2} sx={{ width: 1000, maxWidth: "100%", }}>
             <PhotoSlider
                 images={imageList.map(image => ({
                     src: `${process.env.NEXT_PUBLIC_S3_STATIC_IMG_URL}${image.key}`,

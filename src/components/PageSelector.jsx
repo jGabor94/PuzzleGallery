@@ -14,6 +14,6 @@ export default function PageSelector({ imageNumber }) {
     };
 
     return (
-        <Pagination color="primary" count={Math.ceil(imageNumber / process.env.itemsPerPage)} page={page} onChange={handleChange} />
+        <Pagination color="primary" count={Math.ceil(imageNumber / process.env.NEXT_PUBLIC_ITEMS_PER_PAGE)} page={page} onChange={handleChange} />
     )
 }

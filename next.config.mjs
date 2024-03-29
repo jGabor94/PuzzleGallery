@@ -6,9 +6,6 @@ const nextConfig = {
         // Enables the styled-components SWC transform
         styledComponents: true
     },
-    env: {
-        itemsPerPage: 15,
-    },
     images: {
         remotePatterns: [
             {

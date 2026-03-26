@@ -1,4 +1,4 @@
-import { validationErrors } from '@/lib/assets/assets';
+import { ValidationErrors } from '@/lib/assets/assets';
 import { imageExtensions } from '@/lib/data/data';
 import { imageValidationCfg } from '@/lib/types/types';
 
@@ -20,7 +20,7 @@ export default function validateImageLite(file: File, cfg: imageValidationCfg): 
     if (!imagesMimeRegex.test(file.type)) errors.push("Fájl típusa nem megengedett")
 
 
-    if (errors.length > 0) throw new validationErrors(errors)
+    if (errors.length > 0) throw new ValidationErrors(errors)
 
     return true
 

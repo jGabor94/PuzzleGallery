@@ -14,8 +14,10 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noErrorTruncation": true,
     "jsx": "preserve",
     "incremental": true,
+    "target": "ES6",
     "plugins": [
       {
         "name": "next"
@@ -29,13 +31,14 @@
   },
   "include": [
     "next-env.d.ts",
+    "next-auth.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
     ".next/types/**/*.ts",
-    "src/app/layout.jsx",
-    "src/app/page.jsx",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
     "src/app/icon.jsxx"
   ],
   "exclude": [

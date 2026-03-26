@@ -1,31 +1,29 @@
-## Getting Started
+# PuzzleGallery
 
-Create a .env.local file with the following template:
+Next.js 14 alapú képgaléria alkalmazás MongoDB, NextAuth és AWS S3 integrációval. A projekt publikus képmegjelenítést, lapozást, Google vagy jelszavas bejelentkezést, valamint jogosultsághoz kötött képfeltöltést biztosít.
 
-```
-#Authentication
-AUTH_SECRET= #a secret of your choice
-AUTH_URL= #example: http://localhost:3000/api/auth 
-NEXTAUTH_URL= # example: http://localhost:3000
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+[Live Demo](https://puzzlegallery.hobbycode.link/)
 
-#Database
-MONGODB_URI=
-MONGODB_COLLECTION=
+## Fő funkciók
 
-#AWS S3 Bucket
-NEXT_PUBLIC_S3_STATIC_IMG_URL= #example: http://bucketname.s3.eu-central-1.amazonaws.com/images
-S3_REGION= #example: eu-central-1
-S3_ACCESSKEYID=
-S3_SECRETACCESSKEY=
-S3_IMGBUCKETNAME=
-S3_IMG_SUBFOLDER= #example: /dev
+- képgaléria lapozással
+- képek tárolása AWS S3-ban
+- képmetaadatok mentése MongoDB-be
+- Google bejelentkezés NextAuth segítségével
+- hitelesített felhasználói munkamenet JWT sessionnel
+- szerepkör alapú jogosultságkezelés
+- csak megfelelő jogosultsággal elérhető képfeltöltés
+- felhasználói téma beállítás
 
-#Application
-NEXT_PUBLIC_ALLOWED_IMAGE_EXTENSIONS= #example: jpg,png,ico
-NEXT_PUBLIC_ALLOWED_IMAGE_SIZE= #in byte
-ITEMS_PER_PAGE= 
-PUBLISHER_HASH=
-```
+## Technológiai stack
+
+- Next.js 14
+- React 18
+- TypeScript
+- Material UI
+- NextAuth v5 beta
+- MongoDB + Mongoose
+- AWS S3
+- SWR
+
 

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^3.0.0",
     "@aws-sdk/client-s3": "^3.525.0",
     "@aws-sdk/signature-v4": "^3.374.0",
     "@aws-sdk/types": "^3.523.0",
@@ -21,6 +22,8 @@
     "@mui/material-nextjs": "^5.15.11",
     "@plaiceholder/next": "^3.0.0",
     "@types/bcrypt": "^5.0.2",
+    "@types/joi": "^17.2.3",
+    "@types/mongoose": "^5.11.97",
     "@types/uuid": "^9.0.8",
     "aws-crt": "^1.21.1",
     "bcrypt": "^5.1.1",

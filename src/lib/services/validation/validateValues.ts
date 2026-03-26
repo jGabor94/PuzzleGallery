@@ -7,12 +7,10 @@ import Joi from "joi"
  */
 
 const validateValues = (schema: Joi.ObjectSchema<any>, values: AnyObject, options: Joi.ValidationOptions): AnyObject | void => {
+
     const errors: AnyObject = {}
 
     const { error } = schema.validate(values, options)
-
-
-    //console.log(result)
 
     if (error) {
         error.details.forEach((error, index) => {

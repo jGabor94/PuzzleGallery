@@ -1,6 +1,6 @@
 import { ImageExtension } from "../types/types";
 
-export const imageExtensions: Array<ImageExtension> = [
+export const imageExtensions: ImageExtension[] = [
     "jpg",
     "jpeg",
     "png",
@@ -33,3 +33,14 @@ export const imageExtensions: Array<ImageExtension> = [
     "avif",
     "jxl"
 ]
+
+
+export const allowedImageExtenstions: ImageExtension[] = (() => {
+    const extensions = process.env.NEXT_PUBLIC_ALLOWED_IMAGE_EXTENSIONS
+    return extensions ? (extensions.split(",") as ImageExtension[]) : imageExtensions
+})()
+
+export const allowedImageSize: ImageExtension[] = (() => {
+    const extensions = process.env.NEXT_PUBLIC_ALLOWED_IMAGE_EXTENSIONS
+    return extensions ? (extensions.split(",") as ImageExtension[]) : imageExtensions
+})()  

@@ -1,11 +1,13 @@
-import { createServerActionResponse } from "@/lib/assets/serverAction";
+import { Next } from "@/lib/assets/serverAction";
+import { createServerActionResponse } from "@/lib/assets/serverAction/response";
+import { Session } from "next-auth";
 import { redirect } from "next/navigation";
 
 
 type permission = ("create" | "read" | "update" | "delete" | "all")
 type crud = Array<permission>
 
-type acl = Record<string, crud | boolean>;
+export type acl = Record<string, crud | boolean>;
 
 
 
@@ -52,13 +54,13 @@ const aclMiddlewareCustom = (src: acl | (() => Promise<acl>), permission: permis
  * Az acl megadás lehetséges direkt módon valamint egy aszinkron visszahívással aminek a visszatérési értéke egy acl
  */
 
-const aclMiddlewareServerAction = (src: acl | ((params: Array<any>) => Promise<acl>), permission: permission = "all") => async (next: any, helper: any) => {
+const aclMiddlewareServerAction = (src: acl | ((params: Array<any>) => Promise<acl>), permission: permission = "all") => async (next: Next, req: { session: Session, params: any[] }) => {
 
-    const targetAcl = src instanceof Function ? await src(helper.params) : src
+    const targetAcl = src instanceof Function ? await src(req.params) : src
 
-    if (!targetAcl) return createServerActionResponse({ status: 403, payload: { error: "ACL not found" } })
-    if (aclCheck(targetAcl, permission, helper.session.user.roles)) return next()
-    return createServerActionResponse({ status: 403, payload: { error: "You hvae not enough permission to this operation" } })
+    if (!targetAcl) return createServerActionResponse({ status: 403, error: "ACL not found" })
+    if (aclCheck(targetAcl, permission, req.session.user.roles)) return next()
+    return createServerActionResponse({ status: 403, error: "You hvae not enough permission to this operation" })
 }
 
 

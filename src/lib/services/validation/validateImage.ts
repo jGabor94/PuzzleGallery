@@ -1,7 +1,7 @@
-import { validationErrors } from "@/lib/assets/assets"
 import { fileTypeFromBuffer } from 'file-type';
 import { ImageExtension, imageValidationCfg } from "@/lib/types/types";
 import { imageExtensions } from "@/lib/data/data";
+import { ValidationErrors } from '@/lib/assets/assets';
 
 
 
@@ -26,7 +26,7 @@ const validateImage = async (buffer: ArrayBuffer, cfg?: imageValidationCfg): Pro
     if ((size && cfg?.size) && size > cfg.size) errors.push(`Kép márete túl nagy, maximális fáljméret: ${(cfg?.size / 1024 / 1024).toFixed(2)} MB`)
     if (type && !allowedFileExtensions.includes(type?.ext as ImageExtension)) errors.push("Fájl típusa nem megengedett")
 
-    if (errors.length > 0) throw new validationErrors(errors)
+    if (errors.length > 0) throw new ValidationErrors(errors)
 
     return true
 }

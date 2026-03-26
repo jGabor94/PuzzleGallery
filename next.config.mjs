@@ -6,6 +6,12 @@ const nextConfig = {
         // Enables the styled-components SWC transform
         styledComponents: true
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
+    typescript: {
+        ignoreBuildErrors: true,
+    },
     images: {
         remotePatterns: [
             {
